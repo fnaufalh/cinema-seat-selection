@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cinema Seat Selection</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="flex flex-center width-responsive">
+      <div class="container">
+        <div class="screen"></div>
+        <div class="legend">
+          <div class="legend-item">
+            <div class="legend-available"></div>
+            <span>Available</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-occupied"></div>
+            <span>Occupied</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-chosen"></div>
+            <span>Chosen</span>
+          </div>
+        </div>
+        <!-- larger than 768px -->
+        <div class="seat-layout-large">
+          <div class="seat-front-left mb-40"></div>
+          <div class="seat-front-center mb-40 ml-40"></div>
+          <div class="seat-front-right mb-40 ml-40"></div>
+          <div class="seat-mid-left mb-40"></div>
+          <div class="seat-mid-center mb-40 ml-40"></div>
+          <div class="seat-mid-right mb-40 ml-40"></div>
+          <div class="seat-back-left"></div>
+          <div class="seat-back-center ml-40"></div>
+          <div class="seat-back-right ml-40"></div>
+        </div>
+        <!--  medium -->
+        <div class="seat-layout-medium">
+          <div class="row">
+            <div
+              class="layout-front-left mb-10"
+              layout-area="1"
+              onclick="clickArea(this, 4, 79, 76, 18, 15)"
+            ></div>
+            <div
+              class="layout-front-center mb-10 ml-10"
+              layout-area="2"
+              onclick="clickArea(this, 10, 79, 76, 14, 5)"
+            ></div>
+            <div
+              class="layout-front-right mb-10 ml-10"
+              layout-area="3"
+              onclick="clickArea(this, 4, 79, 76, 4, 1)"
+            ></div>
+          </div>
+          <div class="row">
+            <div
+              class="layout-mid-left mb-10"
+              layout-area="4"
+              onclick="clickArea(this, 4, 75, 72, 18, 15)"
+            ></div>
+            <div
+              class="layout-mid-center mb-10 ml-10"
+              layout-area="5"
+              onclick="clickArea(this, 10, 75, 72, 14, 5)"
+            ></div>
+            <div
+              class="layout-mid-right mb-10 ml-10"
+              layout-area="6"
+              onclick="clickArea(this, 4, 75, 72, 4, 1)"
+            ></div>
+          </div>
+          <div class="row">
+            <div
+              class="layout-back-left"
+              layout-area="7"
+              onclick="clickArea(this, 4, 71, 65, 18, 15)"
+            ></div>
+            <div
+              class="layout-back-center ml-10"
+              layout-area="8"
+              onclick="clickArea(this, 10, 71, 65, 14, 5)"
+            ></div>
+            <div
+              class="layout-back-right ml-10"
+              layout-area="9"
+              onclick="clickArea(this, 4, 71, 65, 4, 1)"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-bar">
+        You choose <span class="bold" id="selectedSeat">0</span> seat<span
+          id="plural"
+        ></span
+        >. Chosen seats:
+        <span class="bold" id="chosenSeats">empty</span>
+      </div>
+    </div>
+    <!-- overlay -->
+    <div class="overlay">
+      <div class="modal-dialog">
+        <div class="header">
+          <span class="title">Choose Seat</span>
+          <span id="close" onclick="closeModalDialog()">Close</span>
+        </div>
+        <div class="seat-layout"></div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
